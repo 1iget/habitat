@@ -35,6 +35,7 @@ do_build() {
   sed \
     -e "s,#!/bin/bash$,#!$(pkg_path_for bash)/bin/bash," \
     -e "s,^HAB_PLAN_BUILD=.*$,HAB_PLAN_BUILD=$pkg_version/$pkg_release," \
+    -e "s,^pkg_target=.*$,pkg_target='$pkg_target'," \
     -i "$CACHE_PATH/$program"
 }
 
